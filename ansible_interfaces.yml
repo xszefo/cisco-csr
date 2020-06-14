@@ -6,15 +6,15 @@
   tasks:
     - name: Get hardware facts
       ios_facts:
-         gather_subset: hardware
+         gather_subset: interfaces
          provider:
                username: "{{ username }}"
                password: "{{ password }}"
                port: "{{ port }}"
                host: "{{ ansible_host }}"
                timeout: 30
+      register: interfaces
     - name: Print
-      debug:
-        msg: 
-            - "Hostname: {{ ansible_net_hostname }}"
-            - "Version: {{ ansible_net_version }}"
+      debug:  
+         msg: "{{ interfaces }}" 
+
