@@ -11,8 +11,8 @@ password = 'C1sco12345'
 print(f'Connecting to {host}...')
 filter ="""
 	<native>
-		<version>
-		</version>
+		<hostname>
+		</hostname>
 	</native>
 """
 print(filter)
@@ -24,12 +24,6 @@ if m.connected:
 	
 	root = tree_xml.getroot()
 
-	for elem in root.iter():
-		print(tree_xml.getelementpath(elem))
-	
-	ver1 = root.find('{http://cisco.com/ns/yang/Cisco-IOS-XE-native}native/{http://cisco.com/ns/yang/Cisco-IOS-XE-native}version').text
-	ver2 = root.find('{*}native/{*}version').text	
-	print(f'{ver1}\n{ver2}')	
-	for i in root.iter('{http://cisco.com/ns/yang/Cisco-IOS-XE-native}version'):
-		print(i.text)
+	hostname = root.find('{*}native/{*}hostname').text	
+	print(hostname)
 
