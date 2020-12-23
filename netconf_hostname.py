@@ -3,7 +3,7 @@
 import ncclient.manager
 from lxml import etree
 
-host = 'ios-xe-mgmt-latest.cisco.com'
+host = 'ios-xe-mgmt.cisco.com'
 port = '10000'
 username = 'developer'
 password = 'C1sco12345'
@@ -27,3 +27,4 @@ if m.connected:
 	hostname = root.find('{*}native/{*}hostname').text	
 	print(hostname)
 
+	m.close_session()

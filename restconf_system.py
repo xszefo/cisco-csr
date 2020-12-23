@@ -4,7 +4,7 @@ import requests
 
 requests.packages.urllib3.disable_warnings()
 
-host = 'ios-xe-mgmt-latest.cisco.com'
+host = 'ios-xe-mgmt.cisco.com'
 port = '9443'
 username = 'developer'
 password = 'C1sco12345'

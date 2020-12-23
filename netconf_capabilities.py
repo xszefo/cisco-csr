@@ -2,7 +2,7 @@
 
 import ncclient.manager
 
-host = 'ios-xe-mgmt-latest.cisco.com'
+host = 'ios-xe-mgmt.cisco.com'
 port = '10000'
 username = 'developer'
 password = 'C1sco12345'
@@ -26,6 +26,7 @@ def main():
 				f.write('\n')
 
 	
+	m.close_session()
 	
 if __name__ == '__main__':
     main()
